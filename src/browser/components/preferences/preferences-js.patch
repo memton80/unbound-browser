@@ -1,0 +1,23 @@
+diff --git a/browser/components/preferences/preferences.js b/browser/components/preferences/preferences.js
+index 2d6cba7fac0c7de6d7c4a819f2c7ad20ce10bb33..15434dac6b501cf6f7a6968c6363c59288043c3e 100644
+--- a/browser/components/preferences/preferences.js
++++ b/browser/components/preferences/preferences.js
+@@ -121,6 +121,7 @@ ChromeUtils.defineLazyGetter(this, "gSubDialog", function () {
+       styleSheets: [
+         "chrome://browser/skin/preferences/dialog.css",
+         "chrome://browser/skin/preferences/preferences.css",
++        "chrome://browser/skin/preferences/zen-preferences.css",
+       ],
+       resizeCallback: async ({ title, frame }) => {
+         // Search within main document and highlight matched keyword.
+@@ -324,6 +325,10 @@ function init_all() {
+   register_module("paneSearch", gSearchPane);
+   register_module("panePrivacy", gPrivacyPane);
+   register_module("paneContainers", gContainersPane);
++  register_module("paneZenLooks", gZenLooksAndFeel);
++  register_module("paneZenTabManagement", gZenWorkspacesSettings);
++  register_module("paneZenCKS", gZenCKSSettings);
++  register_module("paneZenMarketplace", gZenMarketplaceManager);
+ 
+   let redesignEnabled = Services.prefs.getBoolPref(
+     "browser.settings-redesign.enabled"

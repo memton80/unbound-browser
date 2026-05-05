@@ -1,0 +1,13 @@
+diff --git a/tools/lint/eslint/__init__.py b/tools/lint/eslint/__init__.py
+index 4e7082179c632ac8fd1c4687329c2fe243cd6991..dadd614f8e7246ee1d390c0057af1536366653d6 100644
+--- a/tools/lint/eslint/__init__.py
++++ b/tools/lint/eslint/__init__.py
+@@ -112,7 +112,7 @@ def lint(paths, config, binary=None, fix=None, rules=[], setup=None, **lintargs)
+         [
+             binary,
+             os.path.join(
+-                module_path, "node_modules", "prettier", "bin", "prettier.cjs"
++                module_path, "..", "node_modules", "@zen-browser", "prettier", "bin", "prettier.cjs"
+             ),
+             "--list-different",
+             "--no-error-on-unmatched-pattern",

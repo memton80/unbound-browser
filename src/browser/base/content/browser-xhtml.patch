@@ -1,0 +1,35 @@
+diff --git a/browser/base/content/browser.xhtml b/browser/base/content/browser.xhtml
+index b42287485c2baeabe831b0d54c6f09330b0caabd..e404c2e028e24eb4fa9b97f143ba476c1b1461fd 100644
+--- a/browser/base/content/browser.xhtml
++++ b/browser/base/content/browser.xhtml
+@@ -19,6 +19,7 @@
+         sizemode="normal"
+         retargetdocumentfocus="urlbar-input"
+         scrolling="false"
++        zen-before-loaded="true"
+         persist="screenX screenY width height sizemode"
+         data-l10n-sync="true">
+ <head>
+@@ -101,8 +102,10 @@
+ 
+   <title data-l10n-id="browser-main-window-default-title"></title>
+ 
++#include zen-preloaded.inc.xhtml
+   <script src="chrome://browser/content/global-scripts.js"></script>
+   <script src="chrome://browser/content/browser-main.js"></script>
++#include zen-assets.inc.xhtml
+ </head>
+ <html:body xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ # All sets except for popupsets (commands, keys, and stringbundles)
+@@ -135,9 +138,10 @@
+     </vbox>
+   </html:template>
+ 
+-#include navigator-toolbox.inc.xhtml
++<hbox id="zen-main-app-wrapper" flex="1" class="browser-toolbox-background">
+ 
+ #include browser-box.inc.xhtml
++</hbox>
+ 
+   <html:template id="customizationPanel">
+     <box id="customization-container" flex="1" hidden="true"><![CDATA[
